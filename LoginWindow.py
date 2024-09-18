@@ -2,7 +2,7 @@ from PyQt6.QtWidgets import *
 from PyQt6.QtGui import *
 from widget import DialogLoginWindow_ui as ui
 import setting
-import CreateAccount
+import CreateAccount, DialogForgot
 
 class LoginWindowClass(QDialog, ui.Ui_DialogLoginWindow):
     def __init__(self):
@@ -14,6 +14,9 @@ class LoginWindowClass(QDialog, ui.Ui_DialogLoginWindow):
         #connect
         self.logIn_btn.clicked.connect(self.accept)
         self.signUp_btn.clicked.connect(self.openCreate)
+        self.forgot_btn.clicked.connect(self.forgDial)
+
+
 
     def accept(self):
         self.user =  self.checkLogin()
@@ -35,6 +38,9 @@ class LoginWindowClass(QDialog, ui.Ui_DialogLoginWindow):
         self.cretAcc.exec()
         self.data = self.setting.get_data()
 
+    def forgDial(self):
+        self.dial = DialogForgot.DialogForgotClass(self.data)
+        self.dial.exec()
 if __name__ == '__main__':
     app = QApplication([])
     w = LoginWindowClass()

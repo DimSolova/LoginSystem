@@ -195,12 +195,33 @@
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="day_sb"/>
+      <widget class="QSpinBox" name="day_sb">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>31</number>
+       </property>
+      </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="yers_sb"/>
+      <widget class="QSpinBox" name="yers_sb">
+       <property name="minimum">
+        <number>1950</number>
+       </property>
+       <property name="maximum">
+        <number>2024</number>
+       </property>
+      </widget>
      </item>
     </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="infoLogin_lb">
+     <property name="text">
+      <string>Enter login and password:</string>
+     </property>
+    </widget>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_6">

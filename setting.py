@@ -1,8 +1,6 @@
 import os, json
-
 set_fold = os.path.join(os.path.expanduser('~'),'settingLoginProject')
 file_logins = 'LoginsAndPass.json'
-
 
 class setting():
     def __init__(self):
